@@ -1,0 +1,36 @@
+= *rspool2* 使用手册 =
+
+== 索引 ==
+
+  * *rspool2* 使用手册
+    * *rspool2* 的使用
+      * *rspool2* 数据类型
+      * *rspool2* 函数
+
+
+  refer to readme.txt please. only chinese edition is available.
+
+== *rspool2* 的使用 ==
+
+=== *rspool2* 数据类型 ===
+
+RSPOOL{{{
+typedef struct resource_pool
+{
+    RSPOOL_GROUP *grp_array[MAX_GROUPS];
+    pthread_mutex_t g_arr_lock;
+    int group_count;
+    int max_gid;
+
+    /* for all foreach */
+    int cur_gid;
+
+} RSPOOL;
+}}}
+
+testdoc
+
+=== *rspool2* 函数 ===
+
+int rspool_put[#RSPOOL RSPOOL]* *rsp*int* gid*void* *handle*rsp 句柄 gid 组号 handle 资源句柄
+
